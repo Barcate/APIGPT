@@ -1,0 +1,10 @@
+html{
+    width: 1vw;
+    height: 1vh;
+}
+
+
+#container{
+    background-color: #d75413;
+    height: 50%;
+}

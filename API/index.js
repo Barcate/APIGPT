@@ -1,14 +1,21 @@
 import OpenAI from "openai";
-
-const openai = new OpenAI();
+import dotenv from "dotenv";
+import fs from "fs";
+import path from "path";
+dotenv.config();
+const openai = new OpenAI({
+  apiKey:process.env.OPENAI_API_KEY,
+});
+const speechFile = path.resolve("./speech.mp3");
 
 async function main() {
-  const completion = await openai.chat.completions.create({
-    messages: [{ role: "system", content: "You are a helpful assistant." }],
-    model: "gpt-3.5-turbo",
+  const mp3 = await openai.audio.speech.create({
+    model: "tts-1",
+    voice: "alloy",
+    input: "Today is a wonderful day to build something people love!",
   });
-
-  console.log(completion.choices[0]);
+  console.log(speechFile);
+  const buffer = Buffer.from(await mp3.arrayBuffer());
+  await fs.promises.writeFile(speechFile, buffer);
 }
-
 main();

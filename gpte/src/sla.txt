@@ -1,0 +1,19 @@
+import logo from './logo.svg';
+import './App.css';
+import {useState} from 'react'
+
+function App() {
+  const [sla, setSla] = useState(0)
+  function sla2() {
+    setSla(sla + 1)
+  }
+
+  return (
+    <div className="App">
+      {sla}
+      <button onClick={sla2}>sexo</button>
+    </div>
+  );
+}
+
+export default App;
