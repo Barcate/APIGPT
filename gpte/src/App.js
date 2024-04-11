@@ -47,7 +47,10 @@ function App() {
         <img src={logo} alt="Logo" />
       </section>
       <section className="right">
+        <h1>Bem-Vindo</h1>
+        <h5>Texto-para-audio</h5>
         <div className="chat-container">
+          
           {mensagens.map((msg, index) => (
             <div key={index} className="message-audio-container">
               <div className="mensagem">{msg}</div>

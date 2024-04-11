@@ -20,7 +20,7 @@ html, body {
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 5em; /* Ajuste conforme necessário */
+  font-size: 5em; 
 }
 
 .right {
@@ -39,7 +39,9 @@ html, body {
   padding: 15px;
   width: 100%;
   max-width: 600px;
+  max-height: 500px;
   border-radius: 8px;
+  overflow-y: auto;
 }
 
 .mensagens {
@@ -67,6 +69,7 @@ html, body {
   padding: 10px;
   border-radius: 5px;
   margin-right: 10px;
+
 }
 
 .form-mensagem button {
@@ -85,26 +88,17 @@ html, body {
 .audio-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  text-align: center;
+  justify-content: center;
   position: relative;
-  padding-right: 30px; /* Espaço para o botão de download */
+  padding-right: 30px;
 }
 
 .audio-container audio {
-  width: 100%; /* O player de áudio deve ocupar todo o espaço disponível */
+  width: 100%;
 }
-
-/* Estilo para o botão de download */
-.audio-container .download-btn {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
-  border: none;
-  color: #d55413;
-  font-size: 1.5em;
-  cursor: pointer;
+h1{
+  margin-bottom: 1px;
 }
 
 @media (max-width: 768px) {
