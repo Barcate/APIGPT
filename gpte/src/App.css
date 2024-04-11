@@ -1,84 +1,123 @@
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 .container {
   display: flex;
-  min-height: 100vh;
-  align-items: stretch; 
-  margin: 0;
+  height: 100vh;
+  align-items: stretch;
+}
+
+.left, .right {
+  width: 50%; 
 }
 
 .left {
   background-color: #d55413; 
-  width: 50%; 
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
+  font-size: 5em; /* Ajuste conforme necessário */
 }
-
 
 .right {
-  width: 50%;
-  background: linear-gradient(-10deg, #acabab 1%, #ffffff 100%);
+  background: #f0f0f0;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column; 
-  padding: 50px 0; 
+  flex-direction: column;
+  padding: 20px;
+  overflow-y: auto;
 }
 
-.left img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.input-group {
-  width: 50%;
-  text-align: center; 
-}
-
-.input-group input {
+.chat-container {
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
   width: 100%;
-  padding: 10px;
-  height: 30px;
-  margin-bottom: 20px; 
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  max-width: 600px;
+  border-radius: 8px;
 }
 
-.input-group button {
-  width: 105%;
-  padding: 10px;
-  border: none;
-  border-radius: 4px;
-  background-color: #ff6a00;
-  color: white;
-  cursor: pointer;
+.mensagens {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 20px;
 }
 
-#BT-Download {
-  background: none;
+.mensagem, .audio-container {
+  background: #e9e9e9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  align-items: center; 
+}
+
+.form-mensagem {
+  display: flex;
+  width: 100%;
+}
+
+.form-mensagem input {
+  flex-grow: 1;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.form-mensagem button {
+  background-color: #d55413;
+  color: white;
   border: none;
-  color: #333;
+  padding: 10px 20px;
+  border-radius: 5px;
   cursor: pointer;
+}
+
+.form-mensagem button:hover {
+  background-color: #b34911;
+}
+
+.audio-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding-right: 30px; /* Espaço para o botão de download */
 }
 
-#BT-Download:hover {
-  text-decoration: underline;
+.audio-container audio {
+  width: 100%; /* O player de áudio deve ocupar todo o espaço disponível */
 }
 
-
-.input-group h1, .input-group h2 {
-  color: #333;
-  margin-bottom: 10px; 
+/* Estilo para o botão de download */
+.audio-container .download-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #d55413;
+  font-size: 1.5em;
+  cursor: pointer;
 }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
 
-#BT-Download img {
-  margin-right: 8px;
-}
+  .left, .right {
+    width: 100%;
+  }
 
-#BT-Download span {
-  font-size: 14px;
+  .left {
+    padding: 20px;
+    text-align: center;
+  }
 }
